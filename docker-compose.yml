@@ -4,3 +4,10 @@ services:
     build: .
     ports:
       - 3000:3000
+    depends_on:
+      - dynamodb
+      
+  dynamodb:
+    image: amazon/dynamodb-local
+    ports:
+      - 8000:8000
